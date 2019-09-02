@@ -103,8 +103,6 @@ header > h1 {
         width: 100px;
         margin: 10px auto;
         font-size: 2rem;
-        border-radius: 5px;
-        padding: 5px;
     }
 
     .far {
@@ -113,5 +111,30 @@ header > h1 {
 
     .result {
         font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    header > h1 {
+        font-size: 5rem;
+    }
+
+    .counter {
+        border: 3px solid #eeeeee;
+        width: 300px;
+        margin: 20px auto;
+        font-size: 6rem;
+    }
+
+    .far {
+        font-size: 6rem;
+    }
+
+    .result {
+        font-size: 2rem;
+    }
+
+    .restart {
+        font-size: 1.5rem;
     }
 }
