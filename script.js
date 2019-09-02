@@ -31,7 +31,6 @@
 
     function game(userChoice) {
         const computerChoice = getComputerChoice();
-
         if (
             (userChoice === 'Rock' && computerChoice === 'Scissors') ||
             (userChoice === 'Paper' && computerChoice === 'Rock') ||
