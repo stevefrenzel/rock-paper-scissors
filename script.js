@@ -80,6 +80,7 @@
             userScore.innerHTML = userScoreValue;
             computerScoreValue = 0;
             computerScore.innerHTML = computerScoreValue;
+            result.innerHTML = 'Make a move:';
         }
     });
     
