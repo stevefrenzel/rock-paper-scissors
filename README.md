@@ -16,9 +16,11 @@ This app is as basic as can be! `index.html` contains the content, `style.css` t
 
 ## 3. To Do List ⚠️
 
-- change switch to if/else statement
+- change switch to if/else statement √
 - use full width when displayed on desktop
-- add visual information of user and computer choice
-- when hovering over choice, replace symbol with the solid version
+- add visual information of user and computer choice √
+- add color information if user won √
+- when clicking on choice, replace symbol with the solid version
 - add styling (darker theme, nice font, smooth transitions)
+- add a restart button
 - (add a fourth option)
