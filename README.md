@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-<img src="screenshot-rock-paper-scissors.png" alt="Rock, Paper, Scissors by Steve Frenzel">
+###### Please note this is a work in progress website and documentation, so content and appearance will change during time.
 
 ## 1. Description 📝
 
@@ -62,13 +62,15 @@ To restart the game, an eventListener will check if the value of `userScoreValue
 
 ```javascript
 restart.addEventListener('click', function() {
-        if (userScoreValue > 0) {
+        if (userScoreValue > 0 || computerScoreValue > 0) {
             userScoreValue = 0;
             userScore.innerHTML = userScoreValue;
-        }
-        if (computerScoreValue > 0) {
             computerScoreValue = 0;
             computerScore.innerHTML = computerScoreValue;
         }
     });
 ```
+
+## 3. To Do ⚠️
+
+- add icons to counter
