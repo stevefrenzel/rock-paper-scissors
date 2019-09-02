@@ -58,28 +58,26 @@
         userScoreValue++;
         userScore.innerHTML = userScoreValue;
         computerScore.innerHTML = computerScoreValue;
-        result.innerHTML = `${userChoice} beats ${computerChoice}. You win!`;
+        result.innerHTML = `${userChoice} beats ${computerChoice}. <u>You win!</u>`;
     }
 
     function lose(userChoice, computerChoice) {
         computerScoreValue++;
         computerScore.innerHTML = computerScoreValue;
         userScore.innerHTML = userScoreValue;
-        result.innerHTML = `${userChoice} loses to ${computerChoice}. You lost.`;
+        result.innerHTML = `${userChoice} loses to ${computerChoice}. <u>You lost.</u>`;
     }
 
     function draw(userChoice, computerChoice) {
-        result.innerHTML = `${userChoice} equals ${computerChoice}, it's a draw...`;
+        result.innerHTML = `${userChoice} equals ${computerChoice}, it's a <u>draw</u>...`;
     }
 
     // RESTART
 
     restart.addEventListener('click', function() {
-        if (userScoreValue > 0) {
+        if (userScoreValue > 0 || computerScoreValue > 0) {
             userScoreValue = 0;
             userScore.innerHTML = userScoreValue;
-        }
-        if (computerScoreValue > 0) {
             computerScoreValue = 0;
             computerScore.innerHTML = computerScoreValue;
         }
