@@ -21,15 +21,15 @@
 
     // COMPUTER CHOICE
 
-    function getComputerChoice() {
+    const getComputerChoice = () => {
         const choices = ['Rock', 'Paper', 'Scissors'];
         const randomNumber = Math.floor(Math.random() * 3);
         return choices[randomNumber];
-    }
+    };
     
     // MAIN LOGIC
 
-    function game(userChoice) {
+    const game = (userChoice) => {
         const computerChoice = getComputerChoice();
         if (
             (userChoice === 'Rock' && computerChoice === 'Scissors') ||
@@ -50,31 +50,31 @@
             wrapper.classList.add('gray-glow');
             setTimeout(() => wrapper.classList.remove('gray-glow'), 300);
         }
-    }
+    };
 
     // SHOW RESULT
     
-    function win(userChoice, computerChoice) {
+    const win = (userChoice, computerChoice) => {
         userScoreValue++;
         userScore.innerHTML = userScoreValue;
         computerScore.innerHTML = computerScoreValue;
         result.innerHTML = `${userChoice} beats ${computerChoice}. <u>You win!</u>`;
-    }
+    };
 
-    function lose(userChoice, computerChoice) {
+    const lose = (userChoice, computerChoice) => {
         computerScoreValue++;
         computerScore.innerHTML = computerScoreValue;
         userScore.innerHTML = userScoreValue;
         result.innerHTML = `${userChoice} loses to ${computerChoice}. <u>You lost.</u>`;
-    }
+    };
 
-    function draw(userChoice, computerChoice) {
+    const draw = (userChoice, computerChoice) => {
         result.innerHTML = `${userChoice} equals ${computerChoice}, it's a <u>draw</u>...`;
-    }
+    };
 
     // RESTART
 
-    restart.addEventListener('click', function() {
+    restart.addEventListener('click', () => {
         if (userScoreValue > 0 || computerScoreValue > 0) {
             userScoreValue = 0;
             userScore.innerHTML = userScoreValue;
