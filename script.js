@@ -5,24 +5,19 @@
     let computerScore = document.getElementById('computer-score');
     let userScoreValue = 0;
     let computerScoreValue = 0;
+    const wrapper = document.querySelector('.wrapper');
     const result = document.querySelector('.result > p');
     const rock = document.getElementById('rock');
     const paper = document.getElementById('paper');
     const scissors = document.getElementById('scissors');
-    const wrapper = document.querySelector('.wrapper');
-    console.log('wrapper div: ', wrapper);
+    const restart = document.querySelector('.restart');
+    
 
     // USER CHOICE
 
-    rock.addEventListener('click', () => {
-        game('Rock');
-    });
-    paper.addEventListener('click', () => {
-        game('Paper');
-    });
-    scissors.addEventListener('click', () => {
-        game('Scissors');
-    });
+    rock.addEventListener('click', () => { game('Rock'); });
+    paper.addEventListener('click', () => { game('Paper'); });
+    scissors.addEventListener('click', () => { game('Scissors'); });
 
     // COMPUTER CHOICE
 
@@ -43,18 +38,18 @@
             (userChoice === 'Scissors' && computerChoice === 'Paper')) {
             win(userChoice, computerChoice);
             wrapper.classList.add('green-glow');
-            setTimeout(() => wrapper.classList.remove('green-glow'), 250);
+            setTimeout(() => wrapper.classList.remove('green-glow'), 300);
         } else if (
             (userChoice === 'Rock' && computerChoice === 'Paper') ||
             (userChoice === 'Paper' && computerChoice === 'Scissors') ||
             (userChoice === 'Scissors' && computerChoice === 'Rock')) {
             lose(userChoice, computerChoice);
             wrapper.classList.add('red-glow');
-            setTimeout(() => wrapper.classList.remove('red-glow'), 250);
+            setTimeout(() => wrapper.classList.remove('red-glow'), 300);
         } else {
             draw(userChoice, computerChoice);
             wrapper.classList.add('gray-glow');
-            setTimeout(() => wrapper.classList.remove('gray-glow'), 250);
+            setTimeout(() => wrapper.classList.remove('gray-glow'), 300);
         }
     }
 
@@ -77,5 +72,12 @@
     function draw(userChoice, computerChoice) {
         result.innerHTML = `${userChoice} equals ${computerChoice}, it's a draw...`;
     }
+
+    // RESTART
+
+    restart.addEventListener('click', function() {
+        console.log('CLICKED!');
+        userScoreValue = 0;
+    });
     
 })();
