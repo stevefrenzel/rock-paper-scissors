@@ -18,7 +18,7 @@ This app is as basic as can be! `index.html` contains the content, `style.css` t
 
 - change switch to if/else statement √
 - use full width when displayed on desktop √
-- make it responsive
+- make it responsive √
 - add visual information of user and computer choice √
 - add color information if user won √
 - when clicking on choice, replace symbol with the solid version
