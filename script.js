@@ -9,6 +9,22 @@
     const rock = document.getElementById('rock');
     const paper = document.getElementById('paper');
     const scissors = document.getElementById('scissors');
+    const wrapper = document.querySelector('.wrapper');
+    console.log('wrapper div: ', wrapper);
+
+    // USER CHOICE
+
+    rock.addEventListener('click', () => {
+        game('Rock');
+    });
+    paper.addEventListener('click', () => {
+        game('Paper');
+    });
+    scissors.addEventListener('click', () => {
+        game('Scissors');
+    });
+
+    // COMPUTER CHOICE
 
     function getComputerChoice() {
         const choices = ['Rock', 'Paper', 'Scissors'];
@@ -16,7 +32,33 @@
         return choices[randomNumber];
     }
     
-    // WIN, LOSE & DRAW
+    // MAIN LOGIC
+
+    function game(userChoice) {
+        const computerChoice = getComputerChoice();
+
+        if (
+            (userChoice === 'Rock' && computerChoice === 'Scissors') ||
+            (userChoice === 'Paper' && computerChoice === 'Rock') ||
+            (userChoice === 'Scissors' && computerChoice === 'Paper')) {
+            win(userChoice, computerChoice);
+            wrapper.classList.add('green-glow');
+            setTimeout(() => wrapper.classList.remove('green-glow'), 250);
+        } else if (
+            (userChoice === 'Rock' && computerChoice === 'Paper') ||
+            (userChoice === 'Paper' && computerChoice === 'Scissors') ||
+            (userChoice === 'Scissors' && computerChoice === 'Rock')) {
+            lose(userChoice, computerChoice);
+            wrapper.classList.add('red-glow');
+            setTimeout(() => wrapper.classList.remove('red-glow'), 250);
+        } else {
+            draw(userChoice, computerChoice);
+            wrapper.classList.add('gray-glow');
+            setTimeout(() => wrapper.classList.remove('gray-glow'), 250);
+        }
+    }
+
+    // SHOW RESULT
     
     function win(userChoice, computerChoice) {
         userScoreValue++;
@@ -35,41 +77,5 @@
     function draw(userChoice, computerChoice) {
         result.innerHTML = `${userChoice} equals ${computerChoice}, it's a draw...`;
     }
-
-    function game(userChoice) {
-        const computerChoice = getComputerChoice();
-
-        switch (userChoice + computerChoice) {
-            case 'RockScissors':
-            case 'PaperRock':
-            case 'ScissorsPaper':
-                win(userChoice, computerChoice);
-                break;
-            case 'RockPaper':
-            case 'PaperScissors':
-            case 'ScissorsRock':
-                lose(userChoice, computerChoice);
-                break;
-            case 'RockRock':
-            case 'PaperPaper':
-            case 'ScissorsScissors':
-                draw(userChoice, computerChoice);
-                break;
-        }
-    }
-
-    // CHOICES
-
-    rock.addEventListener('click', () => {
-        game('Rock');
-    });
-
-    paper.addEventListener('click', () => {
-        game('Paper');
-    });
-
-    scissors.addEventListener('click', () => {
-        game('Scissors');
-    });
     
 })();
