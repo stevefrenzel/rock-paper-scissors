@@ -1,22 +1,28 @@
 /* GLOBAL */
 
+@import url('https://fonts.googleapis.com/css?family=Asap&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    text-align: center;
+    font-family: 'Asap', sans-serif;
 }
 
-body {
+.wrapper {
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #393e46;
+    color: #eeeeee;
+    transition: all 0.3s ease;
 }
 
 /* HEADER */
-
-header {
-    padding: 20px;
-}
 
 header > h1 {
     font-size: 3rem;
@@ -25,18 +31,12 @@ header > h1 {
 /* COUNTER */
 
 .counter {
-    border: 3px solid black;
+    border: 3px solid #eeeeee;
     width: 150px;
     margin: 20px auto;
     font-size: 3rem;
     border-radius: 5px;
     padding: 5px;
-}
-
-/* RESULT */
-
-.result {
-    font-size: 2rem;
 }
 
 /* CHOICES */
@@ -58,6 +58,12 @@ header > h1 {
     font-size: 5rem;
 }
 
+/* RESULT */
+
+.result {
+    font-size: 1.5rem;
+}
+
 /* COLOR INDICATORS */
 
 .green-glow {
@@ -70,4 +76,18 @@ header > h1 {
 
 .gray-glow {
     background-color: gray;
+}
+
+/* RESTART */
+
+.restart {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.restart:hover {
+    background-color: red;
+    border-radius: 10px;
 }
