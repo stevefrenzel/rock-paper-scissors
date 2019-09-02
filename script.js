@@ -64,8 +64,8 @@
 
     function lose(userChoice, computerChoice) {
         computerScoreValue++;
-        computerScore.innerHTML = userScoreValue;
         computerScore.innerHTML = computerScoreValue;
+        userScore.innerHTML = userScoreValue;
         result.innerHTML = `${userChoice} loses to ${computerChoice}. You lost.`;
     }
 
@@ -76,8 +76,14 @@
     // RESTART
 
     restart.addEventListener('click', function() {
-        console.log('CLICKED!');
-        userScoreValue = 0;
+        if (userScoreValue > 0) {
+            userScoreValue = 0;
+            userScore.innerHTML = userScoreValue;
+        }
+        if (computerScoreValue > 0) {
+            computerScoreValue = 0;
+            computerScore.innerHTML = computerScoreValue;
+        }
     });
     
 })();
