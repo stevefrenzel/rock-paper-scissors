@@ -74,3 +74,7 @@ restart.addEventListener('click', function() {
 ## 3. To Do ⚠️
 
 - add icons to counter
+- add color to result message: 
+  - green -> win
+  - red -> lose
+  - yellow -> draw
