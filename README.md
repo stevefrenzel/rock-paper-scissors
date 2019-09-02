@@ -1,7 +1,5 @@
 # Rock, Paper, Scissors
 
-###### Please note this is a work in progress application and documentation. Content and appearance will change during time.
-
 ## 1. Description 📝
 
 A classic "Rock, Paper, Scissors" game utilising HTML, CSS and JavaScript. If the user and computer make the same choice it's a draw, otherwise the following rules will apply:
