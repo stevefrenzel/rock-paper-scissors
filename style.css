@@ -31,7 +31,7 @@ header > h1 {
 /* COUNTER */
 
 .counter {
-    border: 3px solid #eeeeee;
+    border: 3px solid #eee;
     width: 150px;
     margin: 20px auto;
     font-size: 3rem;
@@ -85,6 +85,9 @@ header > h1 {
     margin: 5px;
     padding: 5px;
     transition: all 0.3s ease;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin: 30px;
 }
 
 .restart:hover {
