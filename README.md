@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors
 
+<img src="screenshot-rock-paper-scissors.png" alt="Rock, Paper, Scissors by Steve Frenzel">
+
 ## 1. Description 📝
 
 A classic "Rock, Paper, Scissors" game utilising HTML, CSS and JavaScript. If the user and computer make the same choice it's a draw, otherwise the following rules will apply:
