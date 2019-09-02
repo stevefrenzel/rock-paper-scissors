@@ -28,6 +28,22 @@ header > h1 {
     font-size: 3rem;
 }
 
+/* SCORE BOARD */
+
+.score-board {
+    display: flex;
+    align-items: center;
+}
+
+.user-display {
+    margin: 50px;
+    padding: 20px;
+}
+
+.user-display > p {
+    margin: 10px;
+}
+
 /* COUNTER */
 
 .counter {
@@ -85,13 +101,13 @@ header > h1 {
     margin: 5px;
     padding: 5px;
     transition: all 0.3s ease;
-    border: 1px solid #eee;
+    color: tomato;
     border-radius: 5px;
     margin: 30px;
 }
 
 .restart:hover {
-    color: tomato;
+    color: #eee;
 }
 
 /* MEDIA QUERIES */
