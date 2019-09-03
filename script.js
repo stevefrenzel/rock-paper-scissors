@@ -11,7 +11,8 @@
     const paper = document.getElementById('paper');
     const scissors = document.getElementById('scissors');
     const restart = document.querySelector('.restart');
-    
+    const displayLeft = document.querySelector('#display-left > span');
+    const displayRight = document.querySelector('#display-right > span');
 
     // USER CHOICE
 
@@ -26,11 +27,14 @@
         const randomNumber = Math.floor(Math.random() * 3);
         return choices[randomNumber];
     };
-    
+
     // MAIN LOGIC
 
     const game = (userChoice) => {
         const computerChoice = getComputerChoice();
+
+        // DETERMINE WINNER, LOSER OR DRAW
+
         if (
             (userChoice === 'Rock' && computerChoice === 'Scissors') ||
             (userChoice === 'Paper' && computerChoice === 'Rock') ||
@@ -49,6 +53,26 @@
             draw(userChoice, computerChoice);
             wrapper.classList.add('gray-glow');
             setTimeout(() => wrapper.classList.remove('gray-glow'), 300);
+        }
+
+        // SHOW USER CHOICE
+
+        if (userChoice === 'Rock') {
+            displayLeft.innerHTML = '<i class="far fa-hand-rock"></i>';
+        } else if (userChoice === 'Paper') {
+            displayLeft.innerHTML = '<i class="far fa-hand-paper"></i>';
+        } else {
+            displayLeft.innerHTML = '<i class="far fa-hand-scissors"></i>';
+        }
+
+        // SHOW COMPUTER CHOICE
+
+        if (computerChoice === 'Rock') {
+            displayRight.innerHTML = '<i class="far fa-hand-rock"></i>';
+        } else if (computerChoice === 'Paper') {
+            displayRight.innerHTML = '<i class="far fa-hand-paper"></i>';
+        } else {
+            displayRight.innerHTML = '<i class="far fa-hand-scissors"></i>';
         }
     };
 
@@ -81,6 +105,8 @@
             computerScoreValue = 0;
             computerScore.innerHTML = computerScoreValue;
             result.innerHTML = 'Make a move:';
+            displayLeft.innerHTML = '<span></span>';
+            displayRight.innerHTML = '<span></span>';
         }
     });
     
