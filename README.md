@@ -1,6 +1,6 @@
 # Rock, Paper, Scissors
 
-###### Please note this is a work in progress website and documentation, so content and appearance will change during time.
+<img src='screenshot-rock-paper-scissors.png' alt='Rock, Paper, Scissors'>
 
 ## 1. Description 📝
 
@@ -31,11 +31,14 @@ function getComputerChoice() {
     }
 ```
 
-Depending on the choice of the user inside the `choices-wrapper`element, either the `win()`, `lose()` or `draw()` function will run. Each one indicates the result by a flash of green, red or gray color on the whole screen:
+Depending on the choice of the user inside the `choices-wrapper`element, either the `win()`, `lose()` or `draw()` function will run. Each one indicates the result by a flash of green, red or gray color on the whole screen. It will also display the symbol the user chose:
 
 ```javascript
-function game(userChoice) {
+const game = (userChoice) => {
         const computerChoice = getComputerChoice();
+
+        // DETERMINE WINNER, LOSER OR DRAW
+
         if (
             (userChoice === 'Rock' && computerChoice === 'Scissors') ||
             (userChoice === 'Paper' && computerChoice === 'Rock') ||
@@ -55,26 +58,41 @@ function game(userChoice) {
             wrapper.classList.add('gray-glow');
             setTimeout(() => wrapper.classList.remove('gray-glow'), 300);
         }
-    }
+
+        // SHOW USER CHOICE
+
+        if (userChoice === 'Rock') {
+            displayLeft.innerHTML = '<i class="far fa-hand-rock"></i>';
+        } else if (userChoice === 'Paper') {
+            displayLeft.innerHTML = '<i class="far fa-hand-paper"></i>';
+        } else {
+            displayLeft.innerHTML = '<i class="far fa-hand-scissors"></i>';
+        }
+
+        // SHOW COMPUTER CHOICE
+
+        if (computerChoice === 'Rock') {
+            displayRight.innerHTML = '<i class="far fa-hand-rock"></i>';
+        } else if (computerChoice === 'Paper') {
+            displayRight.innerHTML = '<i class="far fa-hand-paper"></i>';
+        } else {
+            displayRight.innerHTML = '<i class="far fa-hand-scissors"></i>';
+        }
+    };
 ```
 
-To restart the game, an eventListener will check if the value of `userScoreValue` or `computerScoreValue` is above 0. If so, both values will be set to 0 again:
+To restart the game, an eventListener will check if the value of `userScoreValue` or `computerScoreValue` is above 0. If so, both values will be set to 0 again and the symbols will be deleted:
 
 ```javascript
-restart.addEventListener('click', function() {
+restart.addEventListener('click', () => {
         if (userScoreValue > 0 || computerScoreValue > 0) {
             userScoreValue = 0;
             userScore.innerHTML = userScoreValue;
             computerScoreValue = 0;
             computerScore.innerHTML = computerScoreValue;
+            result.innerHTML = 'Make a move:';
+            displayLeft.innerHTML = '<span></span>';
+            displayRight.innerHTML = '<span></span>';
         }
     });
 ```
-
-## 3. To Do ⚠️
-
-- add icons to counter
-- add color to result message: 
-  - green -> win
-  - red -> lose
-  - yellow -> draw
